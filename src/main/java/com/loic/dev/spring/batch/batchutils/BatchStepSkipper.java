@@ -8,6 +8,12 @@ import org.springframework.batch.item.file.FlatFileParseException;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Bean qui va se charger de gérer la tolérance aux fautes
+ * 
+ * @author crussonl
+ *
+ */
 @Slf4j
 public class BatchStepSkipper implements SkipPolicy {
 

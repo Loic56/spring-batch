@@ -23,8 +23,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * Spring batch reader : read all the input data files
  * 
- * @author Georges Kemayo
- *
+ * 
  */
 @Slf4j
 public class BatchReader extends MultiResourceItemReader<InputData> {
@@ -33,8 +32,8 @@ public class BatchReader extends MultiResourceItemReader<InputData> {
 
 	public BatchReader(String workDirPath) {
 		log.info(String.format("Batch reader starting to read input data in repository : %s", workDirPath));
-		this.setResources(getInputResources(workDirPath));
-		this.setDelegate(readOneFile());
+		this.setResources(lireResources(workDirPath));
+		this.setDelegate(lireUnFichier());
 	}
 
 	/**
@@ -43,9 +42,10 @@ public class BatchReader extends MultiResourceItemReader<InputData> {
 	 * @param workDirPath
 	 * @return
 	 */
-	private FileSystemResource[] getInputResources(String workDirPath) {
+	private FileSystemResource[] lireResources(String workDirPath) {
 
 		List<FileSystemResource> inputResources = new ArrayList<>();
+
 		File inputDir = new File(workDirPath);
 		if (inputDir.isDirectory()) {
 			File[] inputFiles = inputDir.listFiles();
@@ -57,7 +57,6 @@ public class BatchReader extends MultiResourceItemReader<InputData> {
 				}
 			}
 		}
-
 		return inputResources.toArray(new FileSystemResource[inputResources.size()]);
 	}
 
@@ -66,7 +65,7 @@ public class BatchReader extends MultiResourceItemReader<InputData> {
 	 * 
 	 * @return
 	 */
-	private FlatFileItemReader<InputData> readOneFile() {
+	private FlatFileItemReader<InputData> lireUnFichier() {
 
 		FlatFileItemReader<InputData> resourceReader = new FlatFileItemReader<>();
 

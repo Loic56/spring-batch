@@ -26,8 +26,14 @@ import com.loic.dev.spring.batch.reader.BatchReader;
 import com.loic.dev.spring.batch.writer.BatchWriter;
 
 /**
- * 
+ * Tuto
  * https://gkemayo.developpez.com/tutoriels/java/tutoriel-sur-mise-oeuvre-spring-batch-avec-spring-boot/
+ * 
+ * Spring batch - JSR-352 :
+ * https://docs.spring.io/spring-batch/docs/current/reference/html/jsr-352.html
+ * 
+ * Reader Spring :
+ * https://docs.spring.io/spring-batch/docs/current-SNAPSHOT/reference/html/appendix.html
  * 
  * @author crussonl
  *
